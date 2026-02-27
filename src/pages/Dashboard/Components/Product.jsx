@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const ProductList = ({ data }) => {
     return (
-        <div className="bg-white p-5 sm:p-6 rounded-4xl border border-gray-100 shadow-sm w-full overflow-hidden">
+        <div className="bg-white p-5 sm:p-6 rounded-3xl border border-gray-100 shadow-sm w-full overflow-hidden">
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
                 <h3 className="font-bold text-gray-800 text-lg">Products</h3>

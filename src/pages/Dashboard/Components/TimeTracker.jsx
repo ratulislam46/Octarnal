@@ -30,7 +30,7 @@ const TimeTracker = () => {
     };
 
     return (
-        <div className="bg-[#0D1B10] p-6 rounded-4xl text-white overflow-hidden relative shadow-lg">
+        <div className="bg-[#0D1B10] p-6 rounded-3xl text-white overflow-hidden relative shadow-lg">
             <h4 className="text-sm font-medium text-gray-400">Time Tracker</h4>
             
             <div className="text-4xl font-mono my-6 tracking-wider">
