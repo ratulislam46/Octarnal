@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 const StatsCard = ({ data }) => {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {/* Green Card: Total Users */}
+            {/* Total Users Card */}
             <div className="bg-[#1B5E3A] p-5 rounded-4xl text-white relative h-full">
                 <p className="text-sm font-medium opacity-80">Total Projects</p>
                 <h2 className="text-4xl font-bold mt-2">{data?.overview?.totalUsers}</h2>
@@ -15,7 +15,7 @@ const StatsCard = ({ data }) => {
                 </button>
             </div>
 
-            {/* White Card 1: Active Users */}
+            {/* Active Users Card */}
             <div className="bg-white p-5 rounded-4xl border border-gray-100 shadow-sm relative h-full">
                 <p className="text-sm font-medium text-gray-500">Ended Projects</p>
                 <h2 className="text-4xl font-bold mt-2">{data?.overview?.activeUsers}</h2>
@@ -27,7 +27,7 @@ const StatsCard = ({ data }) => {
                 </button>
             </div>
 
-            {/* White Card 2: Revenue */}
+            {/* Revenue Card */}
             <div className="bg-white p-5 rounded-4xl border border-gray-100 shadow-sm relative h-full">
                 <p className="text-sm font-medium text-gray-500">Running Projects</p>
                 <h2 className="text-4xl font-bold mt-2">
@@ -41,7 +41,7 @@ const StatsCard = ({ data }) => {
                 </button>
             </div>
 
-            {/* White Card 3: Growth */}
+            {/* Growth Card */}
             <div className="bg-white p-5 rounded-4xl border border-gray-100 shadow-sm relative h-full">
                 <p className="text-sm font-medium text-gray-500">Pending Project</p>
                 <h2 className="text-4xl font-bold mt-2">
