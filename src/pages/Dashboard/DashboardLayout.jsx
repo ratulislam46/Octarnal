@@ -5,15 +5,23 @@ import { useNavigate } from 'react-router';
 
 const DashboardLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    
     if (!token) {
       navigate('/login');
     }
   }, [navigate]);
+
+
+  useEffect(() => {
+    const storedEmail = localStorage.getItem('userEmail');
+    if (storedEmail) {
+      setUserEmail(storedEmail);
+    }
+  }, []);
 
   const menuItems = [
     { icon: <LayoutDashboard size={20} />, label: 'Dashboard', active: true },
@@ -120,7 +128,6 @@ const DashboardLayout = () => {
         </div>
       </aside>
 
-      {/* Main Content Area */}
       <main className="flex-1 flex flex-col min-w-0 overflow-hidden">
 
         {/* Topbar*/}
@@ -155,7 +162,7 @@ const DashboardLayout = () => {
             <div className="flex flex-row-reverse items-center gap-3 border-l pl-6 border-gray-100">
               <div className="text-right hidden sm:block">
                 <p className="text-sm font-bold leading-none">Md Ratul Howlader</p>
-                <p className="text-xs text-gray-400 mt-1">arfanratul46@gmail.com</p>
+                <p className="text-xs text-gray-400 mt-1">{userEmail}</p>
               </div>
               <img
                 src="https://i.ibb.co.com/C5ZdtJgP/inbound6396756790424336379-removebg-preview.png"

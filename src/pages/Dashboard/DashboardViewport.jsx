@@ -42,7 +42,7 @@ const DashboardViewport = () => {
         </div>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2.5 bg-[#1B5E3A] hover:bg-[#155a36] text-white rounded-full text-sm font-semibold hover:opacity-90 hover:cursor-pointer">
-            <Plus size={18} /> Add Project
+            <Plus size={18} /> Add Product
           </button>
           <button className="px-4 py-2.5 border border-gray-200 rounded-full text-sm font-semibold hover:bg-gray-50 hover:cursor-pointer">
             Import Data

@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Plus } from 'lucide-react';
 
 const ProductList = ({ data }) => {
     return (
@@ -6,8 +6,8 @@ const ProductList = ({ data }) => {
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
                 <h3 className="font-bold text-gray-800 text-lg">Products</h3>
-                <button className="text-xs font-bold border border-[#1B5E3A] text-[#1B5E3A] rounded-full px-3 py-1 hover:bg-green-50 transition-colors cursor-pointer shrink-0">
-                    + New
+                <button className="flex items-center gap-2 text-xs font-bold border border-[#1B5E3A] text-white hover:text-[#1B5E3A] rounded-full px-3 py-2 bg-[#1B5E3A] hover:bg-white transition-colors cursor-pointer shrink-0">
+                    <Plus size={14} /> New
                 </button>
             </div>
             
@@ -18,7 +18,7 @@ const ProductList = ({ data }) => {
                         
                         {/* Icon & Details */}
                         <div className="flex items-center gap-3 min-w-0 flex-1">
-                            <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                            <div className="w-10 h-10 bg-[#1B5E3A] rounded-xl flex items-center justify-center text-white shrink-0">
                                 <ArrowUpRight size={18} />
                             </div>
                             
