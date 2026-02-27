@@ -6,7 +6,7 @@ const TeamCollaboration = ({ data }) => {
         <div className="bg-white p-6 rounded-4xl border border-gray-100 shadow-sm">
             <div className="flex justify-between items-center mb-6">
                 <h3 className="font-bold">Team Collaboration</h3>
-                <button className="text-xs font-bold border rounded-full px-3 py-1 flex items-center gap-1 hover:cursor-pointer">
+                <button className="text-xs font-bold border border-[#1B5E3A] text-[#1B5E3A] rounded-full px-3 py-1 flex items-center gap-1 hover:cursor-pointer">
                     <Plus size={14} /> Add Member
                 </button>
             </div>
