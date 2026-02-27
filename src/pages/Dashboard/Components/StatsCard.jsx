@@ -1,0 +1,61 @@
+import { ArrowUpRight } from 'lucide-react';
+
+const StatsCard = ({ data }) => {
+    return (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {/* Green Card: Total Users */}
+            <div className="bg-[#1B5E3A] p-5 rounded-4xl text-white relative h-full">
+                <p className="text-sm font-medium opacity-80">Total Projects</p>
+                <h2 className="text-4xl font-bold mt-2">{data?.overview?.totalUsers}</h2>
+                <div className="mt-4 flex items-center gap-1 text-[10px]">
+                    <span className="bg-white/20 p-1 rounded-md">5%</span> Increased from last month
+                </div>
+                <button className="absolute top-4 right-4 p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+                    <ArrowUpRight size={16} />
+                </button>
+            </div>
+
+            {/* White Card 1: Active Users */}
+            <div className="bg-white p-5 rounded-4xl border border-gray-100 shadow-sm relative h-full">
+                <p className="text-sm font-medium text-gray-500">Ended Projects</p>
+                <h2 className="text-4xl font-bold mt-2">{data?.overview?.activeUsers}</h2>
+                <div className="mt-4 flex items-center gap-1 text-[10px] text-gray-400">
+                    <span className="bg-gray-100 p-1 rounded-md">6%</span> Increased from last month
+                </div>
+                <button className="absolute top-4 right-4 p-2 bg-gray-50 text-gray-400 rounded-full hover:bg-gray-100 transition-colors">
+                    <ArrowUpRight size={16} />
+                </button>
+            </div>
+
+            {/* White Card 2: Revenue */}
+            <div className="bg-white p-5 rounded-4xl border border-gray-100 shadow-sm relative h-full">
+                <p className="text-sm font-medium text-gray-500">Running Projects</p>
+                <h2 className="text-4xl font-bold mt-2">
+                    {data?.overview?.revenue ? `$${(data.overview.revenue / 1000).toFixed(0)}k` : '0'}
+                </h2>
+                <div className="mt-4 flex items-center gap-1 text-[10px] text-gray-400">
+                    <span className="bg-gray-100 p-1 rounded-md">2%</span> Increased from last month
+                </div>
+                <button className="absolute top-4 right-4 p-2 bg-gray-50 text-gray-400 rounded-full hover:bg-gray-100 transition-colors">
+                    <ArrowUpRight size={16} />
+                </button>
+            </div>
+
+            {/* White Card 3: Growth */}
+            <div className="bg-white p-5 rounded-4xl border border-gray-100 shadow-sm relative h-full">
+                <p className="text-sm font-medium text-gray-500">Pending Project</p>
+                <h2 className="text-4xl font-bold mt-2">
+                    {data?.overview?.growth ? `${data.overview.growth.toFixed(0)}` : '0'}
+                </h2>
+                <div className="mt-4 flex items-center gap-1 text-[10px] text-gray-400">
+                    On Discuss
+                </div>
+                <button className="absolute top-4 right-4 p-2 bg-gray-50 text-gray-400 rounded-full hover:bg-gray-100 transition-colors">
+                    <ArrowUpRight size={16} />
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default StatsCard;
