@@ -30,29 +30,44 @@ const TimeTracker = () => {
     };
 
     return (
-        <div className="bg-[#0D1B10] p-6 rounded-3xl text-white overflow-hidden relative shadow-lg">
-            <h4 className="text-sm font-medium text-gray-400">Time Tracker</h4>
+        <div className="bg-[#0D1B10] p-6 rounded-3xl text-white overflow-hidden relative shadow-lg min-h-50 flex flex-col justify-center">
             
-            <div className="text-4xl font-mono my-6 tracking-wider">
-                {formatTime(seconds)}
-            </div>
+            {/* Background Image Layer */}
+            <div 
+                className="absolute inset-0 z-0 opacity-40 transition-opacity duration-500 hover:opacity-50"
+                style={{
+                    backgroundImage: `url('https://i.ibb.co.com/B20rsMnN/aaaaaaaaaaaaa.jpg')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    mixBlendMode: 'luminosity' 
+                }}
+            ></div>
 
-            <div className="flex gap-4 relative z-10">
-                {/* Play and Pause Button */}
-                <button 
-                    onClick={() => setIsActive(!isActive)}
-                    className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all active:scale-95 cursor-pointer"
-                >
-                    {isActive ? <Pause fill="white" size={20} /> : <Play fill="white" size={20} />}
-                </button>
+            {/* Content Layer  */}
+            <div className="relative z-10">
+                <h4 className="text-sm font-medium text-gray-300">Time Tracker</h4>
+                
+                <div className="text-5xl font-bold my-6 tracking-tight">
+                    {formatTime(seconds)}
+                </div>
 
-                {/* Reset Button */}
-                <button 
-                    onClick={handleReset}
-                    className="p-3 bg-red-500 rounded-full hover:bg-red-600 transition-all active:scale-95 cursor-pointer"
-                >
-                    <Square fill="white" size={18} stroke="none" />
-                </button>
+                <div className="flex gap-4">
+                    {/* Play and Pause Button */}
+                    <button 
+                        onClick={() => setIsActive(!isActive)}
+                        className="p-4 bg-white text-black rounded-full hover:bg-gray-200 transition-all active:scale-90 cursor-pointer shadow-xl"
+                    >
+                        {isActive ? <Pause fill="currentColor" size={24} /> : <Play fill="currentColor" size={24} />}
+                    </button>
+
+                    {/* Reset Button */}
+                    <button 
+                        onClick={handleReset}
+                        className="p-4 bg-[#EF4444] rounded-full hover:bg-red-600 transition-all active:scale-90 cursor-pointer shadow-xl"
+                    >
+                        <Square fill="white" size={20} stroke="none" />
+                    </button>
+                </div>
             </div>
         </div>
     );

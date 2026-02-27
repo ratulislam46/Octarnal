@@ -6,6 +6,7 @@ import StatsCard from './Components/StatsCard';
 import TimeTracker from './Components/TimeTracker';
 import AnalyticsChart from './Components/AnalyticsChart';
 import ProductList from './Components/Product';
+import ProjectProgress from './Components/ProjectProcess';
 
 const DashboardViewport = () => {
   const [data, setData] = useState(null);
@@ -55,7 +56,10 @@ const DashboardViewport = () => {
         <div className="col-span-12 lg:col-span-8 space-y-6">
           <StatsCard data={data} />
           <AnalyticsChart data={data} />
-          <TeamCollaboration data={data} />
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <TeamCollaboration data={data} />
+            <ProjectProgress data={data}/>
+          </div>
         </div>
 
         {/* Right Site */}
