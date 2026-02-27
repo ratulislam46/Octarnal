@@ -16,13 +16,15 @@ const TeamCollaboration = ({ data }) => {
                         <div className="flex items-center gap-3">
                             <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 font-bold">
                                 {user?.name[0]}
-                            </div>
+                            </div> 
                             <div>
                                 <p className="text-sm font-bold">{user?.name}</p>
-                                <p className="text-[11px] text-gray-400">Working on {user?.email}</p>
+                                <p className="text-[11px] text-gray-400 mt-0.5">
+                                    {user?.email} • <span className="font-medium">Joined {user?.joinDate}</span>
+                                </p>
                             </div>
                         </div>
-                        <span className={`text-[10px] px-2 py-1 rounded-md font-bold ${user?.status === 'active' ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
+                        <span className={`text-[10px] px-2 py-1 rounded-md font-bold uppercase ${user?.status === 'active' ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
                             {user?.status}
                         </span>
                     </div>

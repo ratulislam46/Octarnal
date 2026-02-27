@@ -33,7 +33,7 @@ const DashboardViewport = () => {
   if (loading) return <div className="p-10">Loading Dashboard...</div>;
 
   return (
-    <div className="flex-1 p-4 lg:p-8 overflow-y-auto no-scrollbar bg-gray-100 mt-3 rounded-xl">
+    <div className="flex-1 p-4 lg:p-8 overflow-y-auto no-scrollbar bg-gray-100 mt-2 lg:mt-3 rounded-xl">
       {/* Header*/}
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
         <div>
