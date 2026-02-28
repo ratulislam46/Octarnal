@@ -7,6 +7,7 @@ import TimeTracker from './Components/TimeTracker';
 import AnalyticsChart from './Components/AnalyticsChart';
 import ProductList from './Components/Product';
 import ProjectProgress from './Components/ProjectProcess';
+import Reminders from './Components/Reminders';
 
 const DashboardViewport = () => {
   const [data, setData] = useState(null);
@@ -51,23 +52,39 @@ const DashboardViewport = () => {
         </div>
       </div>
 
+
       <div className="grid grid-cols-12 gap-6">
-        {/* Left Site */}
-        <div className="col-span-12 lg:col-span-8 space-y-6">
-          <StatsCard data={data} />
-          <AnalyticsChart data={data} />
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-            <TeamCollaboration data={data} />
-            <ProjectProgress data={data}/>
+        {/* Left Site*/}
+        <div className="col-span-12 xl:col-span-9 space-y-6">
+
+          <div className="w-full">
+            <StatsCard data={data} />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-8">
+              <AnalyticsChart data={data} />
+            </div>
+            <div className="lg:col-span-4">
+              <Reminders data={data} />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div className="lg:col-span-7">
+              <TeamCollaboration data={data} />
+            </div>
+            <div className="lg:col-span-5">
+              <ProjectProgress data={data} />
+            </div>
           </div>
         </div>
 
         {/* Right Site */}
-        <div className="col-span-12 lg:col-span-4 space-y-6">
+        <div className="col-span-12 xl:col-span-3 space-y-6 flex flex-col">
           <ProductList data={data} />
           <TimeTracker />
         </div>
-
       </div>
     </div>
   );
